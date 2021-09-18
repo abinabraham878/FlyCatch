@@ -7,11 +7,13 @@ import { PostsComponent } from './views/posts/posts.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { HttpClientModule } from '@angular/common/http';
 import { NgxPaginationModule } from 'ngx-pagination';
+import { ViewPostComponent } from './views/view-post/view-post.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    PostsComponent
+    PostsComponent,
+    ViewPostComponent
   ],
   imports: [
     BrowserModule,

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { PostsService } from './../../services/posts/posts.service';
+import { Router, RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-posts',
@@ -12,7 +13,8 @@ export class PostsComponent implements OnInit {
   public posts: any;
   
 
-  constructor(private postsService: PostsService) {
+  constructor(private postsService: PostsService
+    , private router:Router) {
     
   }
 
@@ -26,4 +28,13 @@ export class PostsComponent implements OnInit {
     });
   }
 
+  public viewPost(id : any){
+    let selectedItem = {
+      id: id
+    }
+    this.postsService.setpost(selectedItem);
+    this.router.navigate(['/view-post'])
+  }
+
+ 
 }
