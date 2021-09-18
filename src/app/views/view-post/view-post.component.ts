@@ -11,6 +11,8 @@ export class ViewPostComponent implements OnInit {
 
   public cardId = 0;
   public selectedItem : any;
+  public postDetails: any;
+  public postComments: any;
 
   constructor(private _activatedRoute: ActivatedRoute,private postsService: PostsService) { }
 
@@ -24,6 +26,7 @@ export class ViewPostComponent implements OnInit {
 
   public getPostById(){
       this.postsService.getselectedPost(this.cardId).subscribe(data =>{
+        this.postDetails = data;
         console.log(data);
 
         this.getPostComments(this.cardId);
@@ -32,6 +35,7 @@ export class ViewPostComponent implements OnInit {
 
   public getPostComments(id: any){
       this.postsService.comments(id).subscribe(data =>{
+        this.postComments = data;
         console.log(data);
       });
   }
