@@ -19,7 +19,6 @@ export class PostsComponent implements OnInit {
   public getAllPosts(){
     this.postsService.getPosts().subscribe(data => {
       this.posts = data;
-      console.log(this.posts);
     });
   }
 
