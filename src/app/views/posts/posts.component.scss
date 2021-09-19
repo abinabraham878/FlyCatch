@@ -64,6 +64,29 @@
     background: #ddd;
     margin-top: 20px;
   }
+
+  .card-height{
+    box-shadow: 7px 9px 15px 5px;
+  }
+
+  hr {
+    border: 5px inset;
+    margin: 10px 0px;
+  }
+
+  @media only screen and (max-width: 800px) {
+    body {
+      margin: 0px 20px;
+    }
+
+    .row{
+      margin: 0px 20px;
+    }
+
+    .card-height {
+      box-shadow: 7px 1px 14px 0px;
+    }
+  }
   
   
   @media screen and (max-width: 800px) {

@@ -4,9 +4,42 @@
   
   <div class="row">
     <div class="leftcolumn">
-      <div class="card" >
-        <h4>{{postDetails?.title}}</h4>
-        <p>{{postDetails?.body}}</p>
+      <div class="card card-height" >
+        <h4><u>{{postDetails?.title}}</u></h4>
+        <p class="post-body">{{postDetails?.body}}</p>
+        <hr>
+        <h6>Comments</h6>
+        <div class="row ScrollStyle">
+          <div class="d-flex justify-content-center" *ngIf="!isLoaded">
+            <div class="spinner-border" role="status">
+              <span class="sr-only">Loading...</span>
+            </div>
+          </div>
+
+          <div class="card mb-3" *ngFor="let item of postComments" >
+            <div class="row no-gutters" >
+              <div class="col-md-12">
+                <div class="row" style="float: left;">
+                  <div style="width: 100px; margin-right: -43px;">
+                    <img src="../../../assets/img/usr-avatar.png" class="card-img" alt="user">
+                  </div>
+                  <div class="text-justify">
+                    <h6>{{item.name}}</h6>
+                    <p class="comment-email"><small class="text-muted">{{item.email}}</small></p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-12">
+                <div class="card-body text-justify">
+                  <p class="comment-body">{{item.body}}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+
+        
       </div>
     </div>
   </div>

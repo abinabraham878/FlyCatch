@@ -9,12 +9,16 @@ import { PostsService } from 'src/app/services/posts/posts.service';
 })
 export class ViewPostComponent implements OnInit {
 
+  isLoaded:boolean;
   public cardId = 0;
   public selectedItem : any;
   public postDetails: any;
   public postComments: any;
+  
 
-  constructor(private postsService: PostsService) { }
+  constructor(private postsService: PostsService) { 
+    this.isLoaded = false;
+  }
 
   ngOnInit(): void {
     
@@ -34,8 +38,13 @@ export class ViewPostComponent implements OnInit {
   }
 
   public getPostComments(id: any){
+    this.isLoaded = false;
       this.postsService.comments(id).subscribe(data =>{
         this.postComments = data;
+        if(this.postComments.length > 0){
+          this.isLoaded = true;
+        }
+
         console.log(data);
       });
   }

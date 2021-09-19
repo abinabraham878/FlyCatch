@@ -14,7 +14,34 @@
     justify-content: center;
     
   }
+
+  .card-height {
+    border: 2px solid;
+    min-height: 500px;
+    box-shadow: 7px 9px 15px 5px;
+  }
+
+  hr {
+    border: 5px inset;
+  }
+
+  h6 {
+    font-size: 16px;
+    margin-top: 8px;
+  }
   
+  .post-body{
+    margin: 22px 0px;
+    text-align: justify;
+  }
+
+  .card-img {
+    width: 45%;
+  }
+
+  .comment-email {
+    font-size: 12px;
+  }
   
   .header {
     padding: 30px;
@@ -45,9 +72,10 @@
   
   
   .card {
-     background-color: white;
-     padding: 20px;
-     margin-top: 20px;
+    background-color: white;
+    padding: 20px;
+    margin-top: 20px;
+    margin-bottom: 68px;
   }
   
   
@@ -59,13 +87,32 @@
   
  
   .footer {
-    position:absolute;
     bottom:0;
     padding: 20px;
     text-align: center;
     background: #ddd;
     margin-top: 20px;
     width:100%;
+  }
+
+  .ScrollStyle
+  {
+    max-height: 300px;
+    overflow-y: scroll;
+  }
+
+  @media only screen and (max-width: 800px) {
+    body {
+      margin: 0px 20px;
+    }
+
+    .row{
+      margin: 0px 20px;
+    }
+
+    .card-height {
+      box-shadow: 7px 1px 14px 0px;
+    }
   }
   
   
