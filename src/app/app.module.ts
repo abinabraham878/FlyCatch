@@ -8,6 +8,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { HttpClientModule } from '@angular/common/http';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { ViewPostComponent } from './views/view-post/view-post.component';
+import { PostsService } from './services/posts/posts.service';
 
 @NgModule({
   declarations: [
@@ -16,13 +17,13 @@ import { ViewPostComponent } from './views/view-post/view-post.component';
     ViewPostComponent
   ],
   imports: [
-    BrowserModule,
+  BrowserModule,
     AppRoutingModule,
     NgbModule,
     HttpClientModule,
     NgxPaginationModule
   ],
-  providers: [],
+  providers: [PostsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

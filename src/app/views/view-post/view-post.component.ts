@@ -14,7 +14,7 @@ export class ViewPostComponent implements OnInit {
   public postDetails: any;
   public postComments: any;
 
-  constructor(private _activatedRoute: ActivatedRoute,private postsService: PostsService) { }
+  constructor(private postsService: PostsService) { }
 
   ngOnInit(): void {
     
