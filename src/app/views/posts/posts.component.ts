@@ -9,26 +9,26 @@ import { Router, RouterModule } from '@angular/router';
 })
 export class PostsComponent implements OnInit {
 
-  p:any;
+  p: any;
   public posts: any;
-  
+
 
   constructor(private postsService: PostsService
-    , private router:Router) {
-    
+    , private router: Router) {
+
   }
 
   ngOnInit(): void {
     this.getAllPosts();
   }
 
-  public getAllPosts(){
+  public getAllPosts() {
     this.postsService.getPosts().subscribe(data => {
       this.posts = data;
     });
   }
 
-  public viewPost(id : any){
+  public viewPost(id: any) {
     let selectedItem = {
       id: id
     }
@@ -36,5 +36,5 @@ export class PostsComponent implements OnInit {
     this.router.navigate(['/view-post'])
   }
 
- 
+
 }
